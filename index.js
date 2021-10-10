@@ -43,8 +43,6 @@ d3.queue()
     });
 
     const render = () => {
-      // Render low resolution boundaries when moving,
-      // render high resolution boundaries when stopped.
       path.attr("d", geoPath(moving ? countries110m : countries50m));
 
       const point = {
@@ -101,7 +99,6 @@ d3.queue()
             moving = false;
             render();
           })
-          // Goal: let zoom handle pinch gestures (not working correctly).
           .filter(() => !(d3.event.touches && d3.event.touches.length === 2))
       )
       .call(
