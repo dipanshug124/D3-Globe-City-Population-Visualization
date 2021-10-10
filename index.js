@@ -21,7 +21,7 @@ d3.queue()
   .defer(d3.json, "https://unpkg.com/world-atlas@1/world/50m.json")
   .defer(
     d3.csv,
-    "https://gist.githubusercontent.com/curran/115407b42ef85b0758595d05c825b346/raw/143f5721a06af8aee65397c45ee97683fa52f5c2/geonames_cities100000.csv"
+    "https://gist.githubusercontent.com/dipanshug124/0132dbe5547583821dd3ac72fbaa8fd2/raw/983bbd1bd2854afd637b1d705a631a602804a19f/cities.csv"
   )
   .await((error, world110m, world50m, cities) => {
     const countries110m = topojson.feature(
